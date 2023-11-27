@@ -28,4 +28,8 @@ List all the topics
 Check what topic is receiving:
 `docker exec -it kafka kafka-console-consumer.sh --bootstrap-server localhost:9092 -topic postgres.public.sample_table --from-beginning`
 
-
+### How to check the execution
+1. Run the application
+2. In a new terminal, connect to postgres database
+3. In a new terminal, connect to mongo database
+4. Read aggregated_results collection from mongo database, while inserting new values into sample_table in the postgres database. The collection shows the number of new records added to postgres database within a window of 10 seconds.
